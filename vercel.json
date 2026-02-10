@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd personal-blog && npm run build",
-  "devCommand": "cd personal-blog && npm run dev",
-  "installCommand": "cd personal-blog && npm install",
-  "outputDirectory": "personal-blog/.next"
-}
