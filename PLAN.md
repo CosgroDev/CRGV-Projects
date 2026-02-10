@@ -71,14 +71,15 @@ Analytics: Optional
 │   │   └── ProjectLayout.astro # Project layout
 │   │
 │   ├── pages/                   # File-based routing
-│   │   ├── index.astro         # Homepage
-│   │   ├── about.astro         # About page
+│   │   ├── index.astro         # Homepage (hero with Dale Cosgrove)
+│   │   ├── about.astro         # About page (minimal)
+│   │   ├── now.astro           # Current interests/featured content
 │   │   ├── blog/
 │   │   │   ├── index.astro     # Blog listing
 │   │   │   ├── [category].astro # Category pages
 │   │   │   └── [...slug].astro  # Individual posts
 │   │   ├── projects/
-│   │   │   ├── index.astro     # Projects listing
+│   │   │   ├── index.astro     # Projects listing (optional)
 │   │   │   └── [slug].astro    # Individual projects
 │   │   └── tags/
 │   │       └── [tag].astro     # Tag filtering
@@ -175,13 +176,34 @@ Analytics: Optional
 ### Phase 3: Homepage & About
 **Goal**: Create entry point and personal introduction
 
-**Steps:**
-1. Create homepage with hero, featured projects, recent posts
-2. Create about page with bio, interests, photo
+**Homepage Design:**
+1. **Hero Section:**
+   - "Dale Cosgrove" in massive, bold typography (72px-96px)
+   - Professional photo (large, clean presentation)
+   - Minimal intro text (one line: who you are, what you do)
+   - Lots of whitespace
+
+2. **Featured/Now Section:**
+   - Current project or interest (single highlight)
+   - "What I'm working on now" or "Currently exploring"
+   - Clean card/block with brief description
+
+3. **Recent Blog Posts:**
+   - Latest 3-4 posts
+   - Clean cards with title, date, category
+   - "View all posts" link
+
+**Navigation:**
+- **Simple & Clean:**
+  - Blog (primary)
+  - Now/Featured (what you're currently into)
+  - About (minimal)
+  - Projects (optional showcase)
 
 **Key Files Created:**
-- `src/pages/index.astro`
-- `src/pages/about.astro`
+- `src/pages/index.astro` (homepage with hero)
+- `src/pages/about.astro` (minimal bio)
+- `src/pages/now.astro` (current interests/projects)
 
 ### Phase 4: Blog System
 **Goal**: Implement full blog functionality
@@ -345,7 +367,56 @@ Start with these 5 files to establish the foundation:
 4. **`src/pages/blog/[...slug].astro`** - Dynamic blog post routing
 5. **`src/pages/index.astro`** - Homepage entry point
 
+## Site Structure & Navigation
+
+### Navigation Design
+**Simple & Focused:**
+```
+Dale Cosgrove [Logo/Name]    Blog | Now | About | Projects
+```
+
+- **Blog** - Primary content focus (all categories)
+- **Now** - Current interests/projects (inspired by nownownow.com)
+- **About** - Minimal bio
+- **Projects** - Optional showcase (can add later)
+
+### Homepage Structure
+```
+┌─────────────────────────────────────┐
+│  DALE COSGROVE                      │  ← Huge typography (72-96px)
+│  [Professional Photo]               │  ← Large, clean
+│  Brief one-liner about yourself     │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│  What I'm Working On Now            │  ← Featured section
+│  [Current project/interest card]    │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│  Recent Posts                       │  ← Latest 3-4 blog posts
+│  [Blog card] [Blog card] [Blog card]│
+└─────────────────────────────────────┘
+```
+
+### The "Now" Page
+A dedicated page (inspired by Derek Sivers' /now movement) showing:
+- What you're currently working on
+- Current interests and focus areas
+- Projects in progress
+- What you're learning right now
+- Updated regularly (like a living document)
+
+This gives visitors a snapshot of your current state without having to read through all your blog posts.
+
 ## Design Philosophy
+
+### Personal Brand: Dale Cosgrove
+**Clean, Clinical, Confident**
+- Large typography emphasizing your name
+- Professional presentation with personality
+- Scientific thinking meets personal storytelling
+- Evidence-based, methodical approach to sharing
 
 ### Visual Design: Clinical & Scientific Aesthetic
 
