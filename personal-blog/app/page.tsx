@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPosts } from '@/lib/posts'
+import { getFeaturedProjects } from '@/lib/projects'
 import { PostCard } from '@/components/post-card'
+import { ProjectCard } from '@/components/project-card'
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3) // Get latest 3 posts
+  const featuredProjects = getFeaturedProjects().slice(0, 2) // Get top 2 featured projects
 
   return (
     <div className="container mx-auto px-4 py-16 max-w-4xl">
@@ -44,6 +47,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Featured Projects */}
+      {featuredProjects.length > 0 && (
+        <section className="mb-20">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Featured Projects</h2>
+            <Link
+              href="/projects"
+              className="text-sm hover:opacity-70 transition-opacity"
+            >
+              View all →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Recent Posts */}
       {posts.length > 0 && (
